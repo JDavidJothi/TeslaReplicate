@@ -1,0 +1,21 @@
+SELECT REPLICATE('Yuvaraj ', 3)
+
+SELECT FirstName, LastName,
+	   SUBSTRING(Email, 1, 2) + REPLICATE('*',5) +
+	   SUBSTRING(Email, CHARINDEX('@',Email), LEN(Email) - CHARINDEX('@',Email)+1) as Email
+FROM tblEmployee;
+
+SELECT FirstName + SPACE(5) + LastName as FullName
+FROM tblEmployee
+
+-- SPACE() FUNCTION
+SELECT '     '
+SELECT SPACE(5)
+
+SELECT * FROM [dbo].[tblEmployees6];
+
+SELECT Email, PATINDEX('%@aaa.com', Email) AS FirstOccurence
+FROM tblEmployees6;
+
+SELECT Email, REPLACE(Email, '.com', '.net') AS ConvertedEmail
+FROM tblEmployees6;
